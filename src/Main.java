@@ -1,5 +1,8 @@
+import enums.TicketStatus;
 import models.*;
 import models.OperationClass;
+import services.TicketService;
+import services.impl.TicketServiceImpl;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+        /*SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         Date dateOut = null;
         Date dateIn = null;
 
@@ -41,7 +44,15 @@ public class Main {
 
         OperationClass.buyTicket(ticket,ivan);
 
-        System.out.println("Денег у пассажира " + ivan.getName() + " осталось: " + ivan.getWallet().getSumma());
+        System.out.println("Денег у пассажира " + ivan.getName() + " осталось: " + ivan.getWallet().getSumma());*/
+
+        TicketStatus[] ticketStatuses = TicketStatus.values();
+        for(int i = 0; i < ticketStatuses.length; i++){
+            System.out.println(ticketStatuses[i].name());
+        }
+
+        TicketService.INSTACE.changeTicketStatus(5l, TicketStatus.SOLD);
+
 
     }
 }

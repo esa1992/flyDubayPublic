@@ -9,6 +9,8 @@ public interface FlyghtService {
 
     FlyghtService INSTANCE = new FlyghtServiceImpl();
 
+    void setFlyght(Flyght flyght);
+
     void saveFlyght(Flyght flyght);
     List<Flyght> getFlyghtList ();
 

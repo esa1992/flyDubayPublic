@@ -12,6 +12,11 @@ public class PassagerServiceImpl implements PassagerService {
     }
 
     @Override
+    public void savePassager(Passager passager) {
+
+    }
+
+    @Override
     public List<Passager> getPassagersList() {
         return null;
     }

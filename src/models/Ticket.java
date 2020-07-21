@@ -1,5 +1,7 @@
 package models;
 
+import enums.TicketStatus;
+
 /**
  * Created by s.elistratov on 12/06/2020.
  */
@@ -11,6 +13,16 @@ public class Ticket {
     private Flyght flyght;
     private boolean isSold;
 
+    public TicketStatus getTicketStatus() {
+        return ticketStatus;
+    }
+
+    public void setTicketStatus(TicketStatus ticketStatus) {
+        this.ticketStatus = ticketStatus;
+    }
+
+    private TicketStatus ticketStatus;
+
     public Ticket(double price, boolean isActiv, Flyght flyght, boolean isSold) {
 
         this.id = OperationClass.counter++;
@@ -19,6 +31,13 @@ public class Ticket {
         this.flyght = flyght;
         this.isSold = isSold;
 
+    }
+
+    public Ticket(double price, TicketStatus ticketStatus) {
+
+        this.id = OperationClass.counter++;
+        this.price = price;
+        this.ticketStatus = ticketStatus;
     }
 
     public Ticket() {

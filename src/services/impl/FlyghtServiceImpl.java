@@ -14,6 +14,11 @@ public class FlyghtServiceImpl implements FlyghtService {
     }
 
     @Override
+    public void saveFlyght(Flyght flyght) {
+
+    }
+
+    @Override
     public List<Flyght> getFlyghtList() {
         return null;
     }
